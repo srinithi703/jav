@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class SimpleCalc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        if (!sc.hasNextDouble()) {
+            System.out.println("Invalid Input");
+            sc.close();
+            return;
+        }
+        double a = sc.nextDouble();
+
+        if (!sc.hasNextDouble()) {
+            System.out.println("Invalid Input");
+            sc.close();
+            return;
+        }
+        double b = sc.nextDouble();
+
+        if (!sc.hasNext()) {
+            System.out.println("Invalid Input");
+            sc.close();
+            return;
+        }
+        char op = sc.next().charAt(0);
+        sc.close();
+
+        double result;
+        switch (op) {
+            case '+':
+                result = a + b;
+                System.out.println("Addition of two number is " + result);
+                break;
+            case '-':
+                result = a - b;
+                System.out.println("Subtraction of two number is " + result);
+                break;
+            default:
+                System.out.println("Invalid Input");
+        }
+    }
+}
