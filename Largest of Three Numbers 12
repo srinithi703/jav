@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class LargestOfThree {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        if (!sc.hasNextInt()) {
+            System.out.println("Enter a valid Input");
+            sc.close();
+            return;
+        }
+        int a = sc.nextInt();
+        if (!sc.hasNextInt()) {
+            System.out.println("Enter a valid Input");
+            sc.close();
+            return;
+        }
+        int b = sc.nextInt();
+        if (!sc.hasNextInt()) {
+            System.out.println("Enter a valid Input");
+            sc.close();
+            return;
+        }
+        int c = sc.nextInt();
+        sc.close();
+
+        if (c > a && c > b) {
+            System.out.println("c is largest then a and b");
+        } else if (b > a && b > c) {
+            System.out.println("b is largest then a and c");
+        } else if (a > b && a > c) {
+            System.out.println("a is largest then b and c");
+        } else {
+            System.out.println("Enter a valid Input");
+        }
+    }
+}
