@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Transactions {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        if (!sc.hasNextInt()) {
+            System.out.println("Invalid Input");
+            return;
+        }
+        int balance = sc.nextInt();
+        if (!sc.hasNextInt()) {
+            System.out.println("Invalid Input");
+            return;
+        }
+        int n = sc.nextInt();
+        List<Integer> tx = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            if (!sc.hasNextInt()) {
+                System.out.println("Invalid Input");
+                return;
+            }
+            tx.add(sc.nextInt());
+        }
+       
+
+        
+        for (int amt : tx) {
+            if (amt >= 0) {
+                balance += amt;
+            } else {
+                if (balance + amt < 0) {
+                    System.out.println("Insufficient Balance");
+                    return;
+                }
+                balance += amt;
+            }
+        }
+        System.out.println(balance);
+    }
+}
