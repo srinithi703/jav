@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        if (!sc.hasNextInt()) {
+            System.out.println("Invalid Input");
+            sc.close();
+            return;
+        }
+        int n = sc.nextInt();
+        sc.close();
+
+        String s = Integer.toString(Math.abs(n));
+
+        if (s.length() != 3) {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        String rev = new StringBuilder(s).reverse().toString();
+        if (s.equals(rev)) {
+            System.out.println("palindrome");
+        } else {
+            System.out.println("not palindrome");
+        }
+    }
+}
